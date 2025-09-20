@@ -33,11 +33,10 @@ Given chunk coordinates as a tuple of integers and a parameter `max_children`, t
 
    1. Create a dimension marker `d{dim}`.
    2. Express `coord` in base `max_children - 1`, producing a sequence of digits (most significant first).
-   3. Join the digits with `/` and prepend the dimension marker to form a subpath. For example:
-
-      ```
-      d{dim}/{digit0}/{digit1}/…/{digitN}
-      ```
+   3. Join the digits with `/` and prepend the dimension marker to form a subpath. This creates a subpath of the form:
+    ```
+    d{dim}/{digit0}/{digit1}/.../{digitN}
+    ```
 
 2. Concatenate all dimension subpaths (in order from the lowest to highest dimension) using `/` as a separator.
 
